@@ -1,7 +1,7 @@
 # Poke Catcher
-- [ ] HTML Main Page. show framework pokemon images and info
-- [ ] Show submit button
-- [ ] CSS minimum look
+- [x] HTML Main Page. show framework pokemon images and info
+- [x] Show submit button
+- [x] CSS minimum look
 - [ ] Local storage functions
     - [ ] render-line-items.js
         - [ ] renderLineItem(cartItem, shirtData) = renderLineItem()
@@ -9,7 +9,7 @@
     - [ ] render-pokemon.js
     - [ ] utils.js
         - [ ] addItem = caughtPokemon
-        - [ ] generatePokemon = getProducts
+        - [x] generatePokemon = getProducts
 - [ ] apps.js
     - [ ] will use generatePokemon()
     - [ ] caughtPokemon
@@ -22,7 +22,7 @@
 ## HTML
 # Main page
 - [ ] 3x radio buttons -  class = "poke-options
-    - [ ] id poke-select
+    - [x] id poke-select
     - [ ] pokeCard - look at RPS
         id: number
         pokemon: name of pokemon
