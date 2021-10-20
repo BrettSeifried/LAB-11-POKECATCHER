@@ -5,7 +5,9 @@
 - [ ] Local storage functions
     - [ ] render-line-items.js
         - [ ] renderLineItem(cartItem, shirtData) = renderLineItem()
+            * Do I need?
         - [ ] renderShirt(shirt) = renderPokemon(poke) 
+            * Future pokeCard goal?
     - [ ] render-pokemon.js
     - [ ] utils.js
         - [ ] addItem = caughtPokemon

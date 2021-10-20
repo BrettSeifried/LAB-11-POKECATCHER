@@ -31,8 +31,13 @@ const generatePokemon = () => {
 
 generatePokemon();
 
+const button = document.getElementById('submit');
+let numGuess = 9;
+button.addEventListener('click', () => {
+    numGuess--;
+    if (numGuess === 0) {
+        window.location.href = './results/index.html';
+    }
+    generatePokemon();
+});
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
