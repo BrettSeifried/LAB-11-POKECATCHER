@@ -8,6 +8,7 @@
             * Do I need?
         - [ ] renderShirt(shirt) = renderPokemon(poke) 
             * Future pokeCard goal?
+        - [x] get pokeDex
     - [ ] render-pokemon.js
     - [ ] utils.js
         - [ ] addItem = caughtPokemon
@@ -51,7 +52,7 @@
 * storage-utils.js - locaStorage functions
     * e-commerce website
         - [ ] Add button to LS = pick, submit button, to LS
-    - [ ] findById
+    - [x] findById
     - [ ] getResults = getProducts
         * get data from local storage
     - [ ] showPokemon(id) - encounter
@@ -80,10 +81,11 @@
 ## Javascript
 # apps.js
 - [ ] generatePokemon()
-    - [ ] generate 3 random pokemon
-    - [ ] while loop for repeated numbers
-    - [ ] call encounterPokemon 3x
-    - [ ] render pokemon on page
+    - [x] generate 3 random pokemon
+    - [x] while loop for repeated numbers
+    - [x] call encounterPokemon 3x
+    - [x] render pokemon on page
+    - [ ] pokeCard page Name, image, type
 
 
 

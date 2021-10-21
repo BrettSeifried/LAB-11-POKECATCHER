@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { generatePokemon } from '../app.js';
-import { findById } from '../utils.js';
+import { encounterPokemon, findById, getPokedex, setPokedex } from '../utils.js';
 import pokemon from '../pokemon.js';
 // import { example } from '../example.js';
 
@@ -51,3 +51,52 @@ test('finds pokemon by id', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.deepEqual(actual, expected);
 });
+
+test('getPokedex should return encounters if they are there', (expect) =>{
+    const fakeDex = [
+        { id: 'bulbasaur', encounter: 4, caught: 2 },
+        { id: 'ivysaur', encounter: 2, caught: 1 }
+    ];
+    localStorage.setItem('DEX', JSON.stringify(fakeDex));
+    const dex = getPokedex();
+    expect.deepEqual(dex, fakeDex);
+});
+
+test('getPokedex should return an empty if the cart does not exist', (expect) => {
+    localStorage.removeItem('DEX');
+    const dex = getPokedex();
+    expect.deepEqual(dex, []);
+});
+
+test('increment encounter', (expect) => {
+    let fakeDex = [
+        { id: 1, encounter: 4, caught: 2 },
+        { id: 2, encounter: 2, caught: 1 }
+    ];
+    setPokedex(fakeDex);
+
+    encounterPokemon(1);
+
+    const newPoke = getPokedex();
+    const actual = newPoke[0].encounter === 1;
+    expect.equal(actual, true);
+});
+
+
+test(' setPokedex will increment', (expect) => {
+    localStorage.removeItem('DEX');
+    const fakeDex = [
+        { id: 1, encounter: 4, caught: 2 },
+        { id: 2, encounter: 2, caught: 1 }
+    ];
+    localStorage.setItem('DEX', JSON.stringify(fakeDex));
+    setPokedex(1);
+    const dex = getPokedex();
+    const expected = [
+        { id: 1, encounter: 5, caught: 2 },
+        { id: 2, encounter: 3, caught: 1 }
+    ];
+
+    expect.deepEqual(dex, expected);
+});
+
