@@ -42,7 +42,6 @@ export function encounterPokemon(id) {
     const dex = getPokedex();
     
     const pokeObj = findById(dex, id);
-    let newPoke = findById(pokemon, id);
     if (pokeObj) {
         pokeObj.encounter++;
     } else {
@@ -50,7 +49,6 @@ export function encounterPokemon(id) {
             id: id,
             encountered: 1,
             captured: 0,
-            name: newPoke.pokemon
         });
     }
     setPokedex(dex);
