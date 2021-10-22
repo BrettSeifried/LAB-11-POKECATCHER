@@ -1,5 +1,3 @@
-import pokemon from './pokemon.js';
-
 export function findById(id, items){
     for (let item of items){
         if (item.id === id){
@@ -14,46 +12,30 @@ export function getPokedex() {
     return dex;
 }
 
-// export function setPokedex(id) {
-//     const dex = getPokedex();
-//     const dexItem = findById(id, dex);
-//     if (dexItem){
-//         const newEncounter = { id: id, encounter: 1, caught: 0 };
-//         dex.push(newEncounter);
-//     } else {
-//         dexItem.encounter++;
-//     }
-//     dexItem.caught++;
-
-//     const stringDex = JSON.stringify(dex);
-//     localStorage.setItem('DEX', stringDex);
-// }
-
-export function catchPokemon(id) {
-    const dex = getPokedex();
-
-    const pokeObj = findById(dex, id);
-
-    pokeObj.caught++;
-    setPokedex(dex);
-}
-
-export function encounterPokemon(id) {
-    const dex = getPokedex();
-    
-    const pokeObj = findById(dex, id);
-    if (pokeObj) {
-        pokeObj.encounter++;
-    } else {
-        dex.push({
-            id: id,
-            encountered: 1,
-            captured: 0,
-        });
-    }
-    setPokedex(dex);
-}
 export function setPokedex(id) {
     const dexString = JSON.stringify(id);
     localStorage.setItem('DEX', dexString);
+}
+
+export function encounterPokemon(id) {
+    // GET
+    let dex = getPokedex();
+    let poke = findById(id, dex);
+    // MODIFY
+    if (poke){
+        poke.encounter++;
+    } else {
+        const newPokemon = { id: id, encountered: 1, caught: 0 };
+        dex.push(newPokemon);
+    }
+    
+    setPokedex(dex);
+}
+
+export function catchPokemon(id) {
+    let dex = getPokedex();
+    let pokeCaught = findById(id, dex);
+
+    pokeCaught.caught++;
+    setPokedex(dex);
 }
