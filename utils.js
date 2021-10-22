@@ -20,21 +20,21 @@ export function setPokedex(id) {
 export function encounterPokemon(id) {
     // GET
     let dex = getPokedex();
-    const poke = findById(id, dex);
+    let poke = findById(id, dex);
     // MODIFY
     if (poke){
         poke.encounter++;
     } else {
         const newPokemon = { id: id, encountered: 1, caught: 0 };
-        results.push(newPokemon);
+        dex.push(newPokemon);
     }
     
     setPokedex(dex);
 }
 
 export function catchPokemon(id) {
-    const dex = getPokedex();
-    const pokeCaught = findById(id, dex);
+    let dex = getPokedex();
+    let pokeCaught = findById(id, dex);
 
     pokeCaught.caught++;
     setPokedex(dex);
