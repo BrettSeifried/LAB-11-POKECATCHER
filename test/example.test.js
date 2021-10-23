@@ -45,7 +45,7 @@ test('finds pokemon by id', (expect) => {
     
     //Act 
     // Call the function you're testing and set the result to a const
-    const actual = findById(1, pokemon);
+    const actual = findById(pokemon, 1);
 
     //Expect
     // Make assertions about what is expected versus the actual result
@@ -72,8 +72,8 @@ test('getPokedex should return an empty if the cart does not exist', (expect) =>
 test('setPokedex should create an array to local storage', (expect) => {
     localStorage.removeItem('DEX');
     const fakeDex = [
-        { id: 'bulbasaur', encounter: 4, caught: 2 },
-        { id: 'ivysaur', encounter: 2, caught: 1 }
+        { id: 'bulbasaur', encountered: 4, caught: 2 },
+        { id: 'ivysaur', encountered: 2, caught: 1 }
     ];
 
     //ACT
@@ -85,11 +85,11 @@ test('setPokedex should create an array to local storage', (expect) => {
 
 test('encounterPokemon: encounter should increment by 1', (expect) => {
     const fakeDex = [
-        { id: 1, encounter: 4, caught: 2 },
+        { id: 1, encountered: 4, caught: 2 },
     ];
     localStorage.setItem('DEX', JSON.stringify(fakeDex));
     const dex = [
-        { id: 1, encounter: 5, caught: 2 },
+        { id: 1, encountered: 5, caught: 2 },
     ];
 
     //ACT
