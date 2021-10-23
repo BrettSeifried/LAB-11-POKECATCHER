@@ -27,7 +27,7 @@ for (let item of dex){
 }
 
 const names = dex.map((item)=>{
-    const poke = findById(pokemon, item.id)
+    const poke = findById(pokemon, item.id);
     return poke.pokemon;
 });
 
