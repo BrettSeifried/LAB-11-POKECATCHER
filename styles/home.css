@@ -1,1 +1,18 @@
-/* add home page styles here */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    background-color: darkgray;
+}
+
+h1{ 
+    font-family: 'Press Start 2P', cursive;
+    font-size: xx-large;
+}
+
+button {
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: x-large;
+    background-color: darkgreen;
+    
+}
