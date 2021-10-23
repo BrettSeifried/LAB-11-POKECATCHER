@@ -7,14 +7,17 @@ const main = document.getElementById('main');
 
 for (let item of dex){
     const pokes = findById(pokemon, item.id);
-
     const div = document.createElement('div');
+
     const img = document.createElement('img');
-    img.src = `../${pokes.image}`;
+    img.src = `${pokes.url_image}`;
+
     const header = document.createElement('h2');
-    header.textContent = pokes.name;
+    header.textContent = pokes.pokemon;
+
     const resultSpan1 = document.createElement('span');
     resultSpan1.textContent = `Encountered: ${pokemon.encountered}`;
+    
     const resultsSpan2 = document.createElement('span');
     resultsSpan2.textContent = `Caught: ${pokemon.picked}`;
 
