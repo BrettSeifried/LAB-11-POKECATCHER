@@ -1,4 +1,4 @@
-export function findById(id, items){
+export function findById(items, id){
     for (let item of items){
         if (item.id === id){
             return item;
@@ -20,10 +20,10 @@ export function setPokedex(id) {
 export function encounterPokemon(id) {
     // GET
     let dex = getPokedex();
-    let poke = findById(id, dex);
+    let poke = findById(dex, id);
     // MODIFY
     if (poke){
-        poke.encounter++;
+        poke.encountered++;
     } else {
         const newPokemon = { id: id, encountered: 1, caught: 0 };
         dex.push(newPokemon);
@@ -34,7 +34,7 @@ export function encounterPokemon(id) {
 
 export function catchPokemon(id) {
     let dex = getPokedex();
-    let pokeCaught = findById(id, dex);
+    let pokeCaught = findById(dex, id);
 
     pokeCaught.caught++;
     setPokedex(dex);
