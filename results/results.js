@@ -16,24 +16,32 @@ for (let item of dex){
     header.textContent = pokes.pokemon;
 
     const resultSpan1 = document.createElement('span');
-    resultSpan1.textContent = `Encountered: ${pokemon.encountered}`;
+    resultSpan1.textContent = `Encountered: ${item.encountered}`;
     
-    const resultsSpan2 = document.createElement('span');
-    resultsSpan2.textContent = `Caught: ${pokemon.picked}`;
+    const resultSpan2 = document.createElement('span');
+    resultSpan2.textContent = `Caught: ${item.caught}`;
 
-    div.append(header, img, resultSpan1, resultsSpan2);
+    div.append(header, img, resultSpan1, resultSpan2);
     main.append(div);
 
 }
 
+const names = dex.map((item)=>{
+    const poke = findById(pokemon, item.id)
+    return poke.pokemon;
+});
+
+const caught = dex.map(item=>item.caught);
+
 var ctx = document.getElementById('resultsChart').getContext('2d');
-var myChart = new Chart(ctx, {
+// eslint-disable-next-line no-undef
+new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: names,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Times Caught',
+            data: caught,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
