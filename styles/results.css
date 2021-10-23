@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: xx-large;
+}
+
 .results {
     display:flex;
     flex-direction: row;
@@ -9,7 +17,6 @@
 img {
     opacity: 1;
     display: flex;
-
 }
 
 div {
